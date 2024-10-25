@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title></title>
+    <!--==============================-->
+    <style>
+        /*================================================================*/
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar-logo a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar-links {
+            display: flex;
+            list-style: none;
+        }
+
+            .navbar-links li {
+                margin-left: 20px;
+            }
+
+            .navbar-links a {
+                color: white;
+                text-decoration: none;
+                padding: 8px 15px;
+                transition: background 0.3s ease;
+            }
+
+                .navbar-links a:hover {
+                    background-color: #ff6600; /* Change color on hover */
+                    border-radius: 4px;
+                }
+
+        /* Mobile Menu Toggle */
+        .navbar-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media screen and (max-width: 768px) {
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+                .navbar-links.active {
+                    display: flex;
+                }
+
+                .navbar-links li {
+                    margin: 15px 0;
+                }
+
+            .navbar-toggle {
+                display: flex;
+            }
+        }
+
+        /*================================================================*/
+
+        body {
+            background-image: url('صور/bg.jpg');
+            background-repeat: no-repeat;
+            background-size: 1400px 700px;
+        }
+        .orange-btn {
+            background-color: orange;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: box-shadow 0.3s ease; /* انتقال سلس */
+        }
+
+            .orange-btn:hover {
+                box-shadow: 0 0 20px rgba(255, 165, 0, 1); /* تأثير الإضاءة عند التمرير */
+            }
+        .dark-btn {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: box-shadow 0.3s ease; /* انتقال سلس */
+            text-decoration: none; /* إزالة التسطير */
+        }
+
+            .dark-btn:hover {
+                box-shadow: 0 0 20px rgba(255, 165, 0, 1); /* تأثير الإضاءة عند التمرير */
+            }
+
+    </style>
+    
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <a href="#">Logo</a>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="https://localhost:44352/HtmlPage2.html">Home</a></li>
+            <li><a href="#">log in</a></li>
+            <li><a href="https://localhost:44352/HtmlPage1.html">Shop</a></li>
+            <li><a href="https://localhost:44352/%D8%A8%D9%84%D9%88%D8%BA.html#">About me</a></li>
+        </ul>
+        <div class="navbar-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <script>
+     // Toggle mobile menu for smaller screens
+     const menu = document.querySelector('#mobile-menu');
+     const links = document.querySelector('.navbar-links');
+
+     menu.addEventListener('click', function () {
+         links.classList.toggle('active');
+     });
+    </script>
+    <!--=================================================================================-->
+    <!--طقم ريال الاول-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-lg-3">
+                <div class="card" style="width: 18rem ;margin-left:150px ;margin-top:30px">
+                    <img class="card-img-top" src="صور/طقم ريال الاوللل.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">طقم ريال مدريد الاول </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Position: Forward</li>
+                        <li class="list-group-item">prise : 150$</li>
+                        <a href="https://localhost:44352/%D8%A7%D9%84%D8%B7%D9%82%D9%85%20%D8%A7%D9%84%D8%A7%D9%88%D9%84.html#" class="btn dark-btn">اضغط هنا للشراء  </a>
+
+                    </ul>
+                </div>
+            </div>
+
+            <!--=================================================================================-->
+
+            <div class="col-md-5 col-lg-3">
+                <div class="card" style="width: 18rem; margin-left: 350px; margin-top: 30px">
+                    <img class="card-img-top" src="صور/طقم ريال مدريد الثاني.jpg" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">طقم ريال مدريد الثاني </h5>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Position: Forward</li>
+                        <li class="list-group-item">prise : 110$</li>
+                        <a href="https://localhost:44352/%D8%B7%D9%82%D9%85%20%D8%B1%D9%8A%D8%A7%D9%84%20%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A.html" class="btn orange-btn"> اضغط هنا للشراء</a>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

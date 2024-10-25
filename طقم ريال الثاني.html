@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .navbar-logo a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar-links {
+            display: flex;
+            list-style: none;
+        }
+
+            .navbar-links li {
+                margin-left: 20px;
+            }
+
+            .navbar-links a {
+                color: white;
+                text-decoration: none;
+                padding: 8px 15px;
+                transition: background 0.3s ease;
+            }
+
+                .navbar-links a:hover {
+                    background-color: #ff6600; /* Change color on hover */
+                    border-radius: 4px;
+                }
+
+        /* Mobile Menu Toggle */
+        .navbar-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        /* Responsive Design for Smaller Screens */
+        @media screen and (max-width: 768px) {
+            .navbar-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+            }
+
+                .navbar-links.active {
+                    display: flex;
+                }
+
+                .navbar-links li {
+                    margin: 15px 0;
+                }
+
+            .navbar-toggle {
+                display: flex;
+            }
+        }
+    </style>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styling */
+
+
+        /* Product card styling */
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            position: relative;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Sale badge */
+        .sale-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #FFA500;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Product image styling */
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* Product details */
+        .product-details {
+            margin-top: 10px;
+        }
+
+        /* Product title */
+        .product-title {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        /* Rating stars */
+        .rating span {
+            color: #FFBF00;
+            font-size: 16px;
+        }
+
+        /* Price styling */
+        .price {
+            margin: 10px 0;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-right: 5px;
+        }
+
+        .new-price {
+            color: #E74C3C;
+            font-weight: bold;
+        }
+
+        /* Actions styling */
+        .actions {
+            margin: 10px 0;
+        }
+
+        .action-btn {
+            background-color: #f1f1f1;
+            border: none;
+            font-size: 18px;
+            margin: 0 5px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+            .action-btn:hover {
+                background-color: #ddd;
+            }
+
+        /* Add to cart link */
+        .add-to-cart {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #3498DB;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+            .add-to-cart:hover {
+                text-decoration: underline;
+            }
+    </style>
+    <style>
+        /* تنسيق العنصر على يمين الشاشة */
+        .kit-description {
+            position: fixed;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            font-family: 'Arial', sans-serif;
+            direction: rtl;
+            text-align: right;
+            letter-spacing: 0.5px; /* توسيع الحروف قليلاً */
+            font-size: 20px; /* حجم النص */
+            color: white; /* لون النص */
+        }
+
+            /* تنسيق العنوان */
+            .kit-description h2 {
+                font-size: 18px;
+                margin-bottom: 10px;
+                color: #000;
+            }
+
+            /* تنسيق الفقرة */
+            .kit-description p {
+                margin-bottom: 5px;
+            }
+
+            /* تنسيق الرابط */
+            .kit-description a {
+                text-decoration: none;
+                color: #3498db;
+                font-weight: bold;
+            }
+
+                .kit-description a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body style="background-color:orangered">
+    <nav  class="navbar">
+        <div class="navbar-logo">
+            <a href="#">Logo</a>
+        </div>
+        <ul class="navbar-links">
+            <li><a href="https://localhost:44352/HtmlPage2.html">Home</a></li>
+            <li><a href="https://localhost:44352/HtmlPage3.html#">login</a></li>
+            <li><a href="https://localhost:44352/HtmlPage1.html">Shop</a></li>
+            <li><a href="https://localhost:44352/%D8%A8%D9%84%D9%88%D8%BA.html#">About me</a></li>
+        </ul>
+        <div class="navbar-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+    <script>
+     // Toggle mobile menu for smaller screens
+     const menu = document.querySelector('#mobile-menu');
+     const links = document.querySelector('.navbar-links');
+
+     menu.addEventListener('click', function () {
+         links.classList.toggle('active');
+     });
+    </script>
+    <div style="margin-left:150px;margin-top:10px" class="product-card">
+        <img src="صور/طقم ريال مدريد الثاني.jpg" alt="Mercedes gle 167" class="product-image">
+        <div class="product-details">
+            <h3 class="product-title">طقم ريال مدريد الثاني</h3>
+            <div class="rating">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>☆</span>
+            </div>
+            <div class="price">
+                <span class="old-price">د.ا 450,00</span>
+                <span class="new-price">د.ا 300,00</span>
+            </div>
+            <div class="actions">
+                <button class="action-btn">👁</button>
+                <button class="action-btn">❤</button>
+                <button class="action-btn">🔄</button>
+            </div>
+            <a class="btn btn-danger" href="#" class="add-to-cart">Add to cart →</a>
+        </div>
+    </div>
+    <div style="top:0px ;margin-top:200px" class="kit-description">
+        <p>طقم ريال مدريد الثاني لموسم 2024-2025 يأتي بتصميم بسيط وأنيق يعكس الفخامة المعروفة للنادي الملكي. اللون الأساسي   </p>
+        <p>
+            للطقم الثاني هو البرتقالي التقليدي مع لمسات سوداء تضيف لمسة من الفخامة. يتم تصنيع الطقم من مواد عالية الجودة         </p>
+        <p>
+            وخفيفة الوزن لضمان
+            تلراحة والأداء الأمثل للاعبين خلال المباريات. الشعار الرسمي للنادي يظهر في الجانب الأيسر من الصدر،
+        </p>
+        <p>بالإضافة إلى شعار الرعاة على القميص.</p>
+        <p>للمزيد من التفاصيل، قم بزيارة <a href="https://www.realmadrid.com" target="_blank">الموقع الرسمي</a>.</p>
+    </div>
+
+</body>
+</html>
